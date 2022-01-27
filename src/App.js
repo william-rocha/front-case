@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import PageContainer from "./components/pageContainer";
+
+import Header from "./components/header";
+import AppRoutes from "./routes";
+import Sidebar from "./components/sidebar";
+import AppProvider from "./appContext/Provider";
+import AppContext from "./appContext/Context";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="App">
+      <AppProvider>
+        <Header />
+        <Sidebar />
+        <AppContext.Consumer>
+          {({ showSidebar }) => (showSidebar ? "foi" : "não")}
+        </AppContext.Consumer>
+        <PageContainer>
+          <AppRoutes />
+        </PageContainer>
+      </AppProvider>
+    </main>
   );
 }
 

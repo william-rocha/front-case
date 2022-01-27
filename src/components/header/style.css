@@ -1,0 +1,84 @@
+header {
+  position: fixed;
+  width: 100%;
+  height: 75px;
+  border-bottom: 8px solid;
+  border-bottom-color: #7cb8d5;
+  background-color: #3f8eb5;
+}
+
+#header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+  position: relative;
+}
+
+#img-logo {
+  width: 110px;
+  position: absolute;
+  top: 40px;
+}
+
+.scroll-down #img-logo {
+  animation: logoAni 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes logoAni {
+  from {
+    width: 110px;
+  }
+  to {
+    width: 70px;
+    top: 7px;
+  }
+}
+.scroll-up #img-logo {
+  animation: logoAniUp 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes logoAniUp {
+  from {
+    width: 70px;
+    top: 7px;
+  }
+  to {
+    width: 110px;
+    top: 40px;
+  }
+}
+
+header.scroll-down {
+  animation: headerAniDown 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes headerAniDown {
+  from {
+    height: 75px;
+    border-bottom: px solid #7cb8d5;
+  }
+  to {
+    height: 61px;
+    border-bottom: 4px solid #7cb8d5;
+  }
+}
+
+header.scroll-up {
+  animation: headerAniUp 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes headerAniUp {
+  from {
+    height: 61px;
+    border-bottom: 4px solid #7cb8d5;
+  }
+  to {
+    height: 75px;
+    border-bottom: px solid #7cb8d5;
+  }
+}

@@ -1,0 +1,11 @@
+#page-container {
+  background-color: #f3f3f3;
+  margin-top: 48px;
+  height: calc(100vh - 73px);
+  overflow-y: scroll;
+}
+
+#page-content {
+  background-color: white;
+  min-height: 100vh;
+}

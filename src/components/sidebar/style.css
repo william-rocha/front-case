@@ -1,0 +1,109 @@
+#sidebar {
+  width: 174px;
+
+
+  padding: 5px 13px;
+  height: 231px;
+  position: fixed;
+  right: 13%;
+  top: 74px;
+  min-height: 84vh;
+  background-color: #7cb8d5;
+  margin-top: 4px;
+}
+
+#sidebar h6 {
+  color: white;
+  padding: 12px 0px;
+}
+#sidebar hr {
+  color: white;
+  height: 1.6px;
+}
+#sidebar > ul {
+  display: contents;
+}
+
+#sidebar > ul li {
+  list-style-type: none;
+  list-style: none;
+  display: flex;
+}
+
+#sidebar > ul li a {
+  flex: 1;
+  font-size: 14px;
+  padding: 8px 12px;
+  color: white;
+  text-decoration: none;
+}
+#sidebar > ul li a.selected-route {
+  flex: 1;
+  padding: 8px 12px;
+  background-color: white;
+}
+
+#sidebar span {
+  font-weight: 500;
+}
+.selected-route span {
+  color: #3f8eb5;
+}
+
+.open-effect {
+  animation: open 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes open {
+  from {
+    right: -24px;
+  }
+  to {
+    right: -12px;
+  }
+}
+
+.open-effect #sidebar {
+  z-index: 999;
+  animation: spread 0.4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes spread {
+  from {
+    width: 166px;
+  }
+  to {
+    width: 178px;
+  }
+}
+
+.fade-effect {
+  z-index: 999;
+  animation: fade 0.3s, delete 0.4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+  from {
+    right: -12px;
+    opacity: 1;
+  }
+  to {
+    right: -24px;
+    opacity: 0;
+  }
+}
+
+@keyframes delete {
+  0% {
+    visibility: visible;
+  }
+  99% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}

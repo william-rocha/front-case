@@ -1,0 +1,6 @@
+.title-container {
+  color: #3f3f3f;
+}
+.title-container > span {
+  margin: 5px;
+}
