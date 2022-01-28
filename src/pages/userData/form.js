@@ -21,7 +21,6 @@ const ClientForm = ({ initialValues }) => {
   const [startDate, setStartDate] = useState("");
   const getClients = async (values) => {
     try {
-      console.log("keyy c", values);
       const formClient = await values;
 
       const objClient = await {
@@ -41,7 +40,6 @@ const ClientForm = ({ initialValues }) => {
         state: formClient.address.state,
         adressAlertEmail: formClient.address.adressAlertEmail,
       };
-      console.log("keyy obj", objClient);
       const resp = await api.put("/client/1", JSON.stringify(objClient));
       const userData = resp.data;
     } catch (err) {}
@@ -49,7 +47,6 @@ const ClientForm = ({ initialValues }) => {
 
   return (
     <div>
-      <h1>Sign Up</h1>
       <Formik
         initialValues={initialValues}
         onSubmit={async (values) => {
@@ -261,8 +258,8 @@ const ClientForm = ({ initialValues }) => {
             >
               Editar dados
             </Button>
-            <pre>{JSON.stringify(values, null, 2)}</pre>
-            <pre>{JSON.stringify(errors, null, 2)}</pre>
+            {/* <pre>{JSON.stringify(values, null, 2)}</pre>
+            <pre>{JSON.stringify(errors, null, 2)}</pre> */}
           </Form>
         )}
       </Formik>
